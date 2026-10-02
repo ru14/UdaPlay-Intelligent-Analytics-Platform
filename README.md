@@ -1,3 +1,4 @@
+<img width="1536" height="1024" alt="Arch and agen flow" src="https://github.com/user-attachments/assets/9e4d704f-4cee-4f7c-a52e-436e2430b224" />
 # UdaPlay — AI Research Agent for the Video Game Industry
 
 UdaPlay is an AI-powered research agent for the video game industry. It combines a local retrieval pipeline with web search fallback to answer questions about games, platforms, genres, release dates, publishers, and other game metadata with grounded, citation-backed responses.
