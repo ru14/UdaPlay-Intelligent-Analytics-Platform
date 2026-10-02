@@ -31,19 +31,18 @@ The agent also includes:
 
 ## Getting started
 
-1. Open the project materials in [`project/`](project/).
-2. Start with [`project/README.md`](project/README.md) for the high-level project overview.
-3. Then follow [`project/starter/README.md`](project/starter/README.md) for the implementation details.
-4. Work through the notebooks in order:
-   - `project/starter/Udaplay_01_starter_project.ipynb`
-   - `project/starter/Udaplay_02_starter_project.ipynb`
+1. Install the dependencies and create the `.env` file as described in [Setup requirements](#setup-requirements).
+2. From `project/starter/`, work through the notebooks in order:
+   - [Part 1: Build the vector database](project/starter/Udaplay_01_starter_project.ipynb)
+   - [Part 2: Build the agent](project/starter/Udaplay_02_starter_project.ipynb)
 
 ## Setup requirements
 
 - Python 3.11+
-- A `.env` file in `project/starter/`
+- Install dependencies with `python -m pip install -r project/starter/requirements.txt`
+- For local notebook execution, install Jupyter with `python -m pip install notebook`
+- Create a `.env` file in `project/starter/` with the variables below
 - API keys for OpenAI and Tavily
-- The dependencies listed in the starter project instructions
 
 Typical environment variables:
 
