@@ -198,9 +198,9 @@ Available in `project/starter/lib/`:
   - [x] Return answers as JSON + natural language (`ask_structured`)
   - [x] Include metadata: confidence, sources, reasoning steps
 
-- [ ] **Visualization**
-  - [ ] Dashboard of retrieval process
-  - [ ] Knowledge base visualization
+- [x] **Visualization**
+  - [x] Dashboard of retrieval process
+  - [x] Knowledge base visualization
 
 - [ ] **Custom Tools**
   - [ ] Sentiment analysis of game reviews
