@@ -195,8 +195,8 @@ Available in `project/starter/lib/`:
   - [x] Save insights across sessions (`search_memory` recalls them in a fresh agent)
 
 - [ ] **Structured Output**
-  - [ ] Return answers as JSON + natural language
-  - [ ] Include metadata: confidence, sources, reasoning steps
+  - [x] Return answers as JSON + natural language (`ask_structured`)
+  - [x] Include metadata: confidence, sources, reasoning steps
 
 - [ ] **Visualization**
   - [ ] Dashboard of retrieval process
