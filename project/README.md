@@ -7,4 +7,4 @@ then work through `Udaplay_01_starter_project.ipynb` (Part 1, the vector databas
 `Udaplay_02_starter_project.ipynb` (Part 2, the agent), in that order, from the `starter/` folder.
 
 ## License
-[License](../LICENSE.md)
+[License](../LICENSE)
