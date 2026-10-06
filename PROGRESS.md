@@ -1,8 +1,8 @@
 # UdaPlay Project Progress Tracker
 
 **Repository:** [ru14/UdaPlay-Intelligent-Analytics-Platform](https://github.com/ru14/UdaPlay-Intelligent-Analytics-Platform)  
-**Last Updated:** 2026-10-02  
-**Status:** Planning & Implementation Phase
+**Last Updated:** 2026-10-06  
+**Status:** Parts 1 & 2 complete (stand-out features optional)
 
 ---
 
@@ -26,42 +26,42 @@ UdaPlay is an AI-powered gaming research agent with a two-tier retrieval archite
 
 ### Checklist
 
-- [ ] **Setup & Dependencies**
-  - [ ] Environment variables loaded (.env file)
-  - [ ] Imports configured (chromadb, embeddings_functions)
-  - [ ] pysqlite3 workaround (if needed)
+- [x] **Setup & Dependencies**
+  - [x] Environment variables loaded (.env file)
+  - [x] Imports configured (chromadb, embeddings_functions)
+  - [x] pysqlite3 workaround (if needed)
 
-- [ ] **ChromaDB Client**
-  - [ ] Create PersistentClient at `chromadb/` path
-  - [ ] Verify connection to persistent storage
-  - [ ] Path: `project/starter/chromadb/`
+- [x] **ChromaDB Client**
+  - [x] Create PersistentClient at `chromadb/` path
+  - [x] Verify connection to persistent storage
+  - [x] Path: `project/starter/chromadb/`
 
-- [ ] **Embedding Function**
-  - [ ] Use OpenAIEmbeddingFunction
-  - [ ] Set `api_key_env_var="OPENAI_API_KEY"`
-  - [ ] Set `api_base=os.getenv("OPENAI_BASE_URL")`
-  - [ ] **Keep identical in Part 2**
+- [x] **Embedding Function**
+  - [x] Use OpenAIEmbeddingFunction
+  - [x] Set `api_key_env_var="OPENAI_API_KEY"`
+  - [x] Set `api_base=os.getenv("OPENAI_BASE_URL")`
+  - [x] **Keep identical in Part 2**
 
-- [ ] **Collection Creation**
-  - [ ] Name: `udaplay` (required for Part 2)
-  - [ ] Use `chroma_client.get_or_create_collection()`
-  - [ ] Attach embedding function to collection
+- [x] **Collection Creation**
+  - [x] Name: `udaplay` (required for Part 2)
+  - [x] Use `chroma_client.get_or_create_collection()`
+  - [x] Attach embedding function to collection
 
-- [ ] **Data Processing**
-  - [ ] Load all JSON files from `project/starter/games/`
-  - [ ] Files: 001.json through 015.json (15 games total)
-  - [ ] Each file has: Name, Platform, Genre, Publisher, Description, YearOfRelease
+- [x] **Data Processing**
+  - [x] Load all JSON files from `project/starter/games/`
+  - [x] Files: 001.json through 015.json (15 games total)
+  - [x] Each file has: Name, Platform, Genre, Publisher, Description, YearOfRelease
 
-- [ ] **Document Indexing**
-  - [ ] Format: `[Platform] Name (Year) - Description`
-  - [ ] Use filename (001, 002, etc.) as document ID
-  - [ ] Store full game metadata in collection metadata
-  - [ ] Call `collection.add()` for each game
+- [x] **Document Indexing**
+  - [x] Format: `[Platform] Name (Year) - Description`
+  - [x] Use filename (001, 002, etc.) as document ID
+  - [x] Store full game metadata in collection metadata
+  - [x] Call `collection.add()` for each game
 
-- [ ] **Verification**
-  - [ ] Perform test semantic search query
-  - [ ] Confirm results return games with similarity scores
-  - [ ] Save notebook with outputs
+- [x] **Verification**
+  - [x] Perform test semantic search query
+  - [x] Confirm results return games with similarity scores
+  - [x] Save notebook with outputs
 
 ### Data Schema
 ```json
@@ -86,50 +86,50 @@ UdaPlay is an AI-powered gaming research agent with a two-tier retrieval archite
 
 ### Checklist
 
-- [ ] **Tool 1: retrieve_game**
-  - [ ] Function signature: `retrieve_game(query: str) -> List[Dict]`
-  - [ ] Load ChromaDB client: `PersistentClient(path="chromadb")`
-  - [ ] Get collection: `get_collection("udaplay")`
-  - [ ] Perform semantic search: `collection.query(query_texts=[query], n_results=3)`
-  - [ ] Extract and format results with Platform, Name, Year, Description
-  - [ ] Docstring included
+- [x] **Tool 1: retrieve_game**
+  - [x] Function signature: `retrieve_game(query: str) -> List[Dict]`
+  - [x] Load ChromaDB client: `PersistentClient(path="chromadb")`
+  - [x] Get collection: `get_collection("udaplay")`
+  - [x] Perform semantic search: `collection.query(query_texts=[query], n_results=3)`
+  - [x] Extract and format results with Platform, Name, Year, Description
+  - [x] Docstring included
 
-- [ ] **Tool 2: evaluate_retrieval**
-  - [ ] Function signature: `evaluate_retrieval(question: str, retrieved_docs: List[Dict]) -> EvaluationReport`
-  - [ ] Use LLM as judge (OpenAI model)
-  - [ ] Prompt: "Evaluate if documents are sufficient to answer the question. Give detailed explanation."
-  - [ ] Return: `EvaluationReport(useful: bool, description: str, confidence: float)`
-  - [ ] Docstring included
+- [x] **Tool 2: evaluate_retrieval**
+  - [x] Function signature: `evaluate_retrieval(question: str, retrieved_docs: List[Dict]) -> EvaluationReport`
+  - [x] Use LLM as judge (OpenAI model)
+  - [x] Prompt: "Evaluate if documents are sufficient to answer the question. Give detailed explanation."
+  - [x] Return: `EvaluationReport(useful: bool, description: str, confidence: float)`
+  - [x] Docstring included
 
-- [ ] **Tool 3: game_web_search**
-  - [ ] Function signature: `game_web_search(query: str) -> List[Dict]`
-  - [ ] Use Tavily client: `tavily_client = TavilyClient(api_key=TAVILY_API_KEY)`
-  - [ ] Perform web search: `tavily_client.search(query, topic="general")`
-  - [ ] Extract results with URL, title, content
-  - [ ] Format for citation: Include source URLs
-  - [ ] Docstring included
+- [x] **Tool 3: game_web_search**
+  - [x] Function signature: `game_web_search(query: str) -> List[Dict]`
+  - [x] Use Tavily client: `tavily_client = TavilyClient(api_key=TAVILY_API_KEY)`
+  - [x] Perform web search: `tavily_client.search(query, topic="general")`
+  - [x] Extract results with URL, title, content
+  - [x] Format for citation: Include source URLs
+  - [x] Docstring included
 
-- [ ] **Agent Class**
-  - [ ] Implement as a class or using StateMachine
-  - [ ] Initialize with tools, LLM model, system prompt
-  - [ ] Maintain conversation state (memory)
-  - [ ] Implement agent loop: retrieve → evaluate → fallback
-  - [ ] System prompt covers agent role, instructions, tool usage
+- [x] **Agent Class**
+  - [x] Implement as a class or using StateMachine
+  - [x] Initialize with tools, LLM model, system prompt
+  - [x] Maintain conversation state (memory)
+  - [x] Implement agent loop: retrieve → evaluate → fallback
+  - [x] System prompt covers agent role, instructions, tool usage
 
-- [ ] **State Machine Workflow**
-  - [ ] State 1: Retrieve from vector DB
-  - [ ] State 2: Evaluate results
-  - [ ] State 3: Decide (good enough or web search?)
-  - [ ] State 4: Web search (if needed)
-  - [ ] State 5: Generate final answer with citations
+- [x] **State Machine Workflow**
+  - [x] State 1: Retrieve from vector DB
+  - [x] State 2: Evaluate results
+  - [x] State 3: Decide (good enough or web search?)
+  - [x] State 4: Web search (if needed)
+  - [x] State 5: Generate final answer with citations
 
-- [ ] **Agent Invocation**
-  - [ ] Query 1: "When was Pokémon Gold and Silver released?" ✅ Local dataset
-  - [ ] Query 2: "Which one was the first 3D platformer Mario game?" ✅ Local dataset
-  - [ ] Query 3: "Was Mortal Kombat X released for PlayStation 5?" ❌ Web fallback
-  - [ ] Output shows step-by-step reasoning for each query
-  - [ ] Each output includes: retrieve → evaluate → final answer
-  - [ ] Citations included when from web
+- [x] **Agent Invocation**
+  - [x] Query 1: "When was Pokémon Gold and Silver released?" ✅ Local dataset
+  - [x] Query 2: "Which one was the first 3D platformer Mario game?" ✅ Local dataset
+  - [x] Query 3: "Was Mortal Kombat X released for PlayStation 5?" ❌ Web fallback
+  - [x] Output shows step-by-step reasoning for each query
+  - [x] Each output includes: retrieve → evaluate → final answer
+  - [x] Citations included when from web
 
 ### Supporting Library Modules
 
@@ -153,33 +153,33 @@ Available in `project/starter/lib/`:
 ## 🎯 Submission Rubric
 
 ### 1. RAG Pipeline ✅
-- [ ] Part 1 notebook loads and processes game JSON files
-- [ ] Data added to persistent ChromaDB with embeddings
-- [ ] Vector DB queries demonstrate semantic search
-- [ ] **Status:** Ready (Part 1)
+- [x] Part 1 notebook loads and processes game JSON files
+- [x] Data added to persistent ChromaDB with embeddings
+- [x] Vector DB queries demonstrate semantic search
+- [x] **Status:** Ready (Part 1)
 
 ### 2. Agent Development ✅
-- [ ] At least 3 tools implemented:
-  - [ ] retrieve_game (vector DB search)
-  - [ ] evaluate_retrieval (quality assessment)
-  - [ ] game_web_search (web fallback)
-- [ ] Each tool is a function/class integrated in workflow
-- [ ] Agent implements state machine
-- [ ] Agent remembers context across queries
-- [ ] **Status:** Ready (Part 2)
+- [x] At least 3 tools implemented:
+  - [x] retrieve_game (vector DB search)
+  - [x] evaluate_retrieval (quality assessment)
+  - [x] game_web_search (web fallback)
+- [x] Each tool is a function/class integrated in workflow
+- [x] Agent implements state machine
+- [x] Agent remembers context across queries
+- [x] **Status:** Ready (Part 2)
 
 ### 3. Demo Queries ✅
-- [ ] Part 2 notebook runs 3 example queries
-- [ ] Output includes reasoning & tool usage
-- [ ] At least 1 query triggers web fallback
-- [ ] Results are cited (URLs from web search)
-- [ ] **Status:** Ready (Part 2)
+- [x] Part 2 notebook runs 3 example queries
+- [x] Output includes reasoning & tool usage
+- [x] At least 1 query triggers web fallback
+- [x] Results are cited (URLs from web search)
+- [x] **Status:** Ready (Part 2)
 
 ### 4. Deliverables ✅
-- [ ] `Udaplay_01_starter_project.ipynb` — completed with outputs
-- [ ] `Udaplay_02_starter_project.ipynb` — completed with outputs
-- [ ] All cells executed and saved
-- [ ] **Status:** Ready for submission
+- [x] `Udaplay_01_starter_project.ipynb` — completed with outputs
+- [x] `Udaplay_02_starter_project.ipynb` — completed with outputs
+- [x] All cells executed and saved
+- [x] **Status:** Ready for submission
 
 ---
 
@@ -190,9 +190,9 @@ Available in `project/starter/lib/`:
   - [ ] Show richer queries with custom data
 
 - [ ] **Advanced Memory**
-  - [ ] Use persistent ChromaDB for long-term memory
-  - [ ] Agent "learns" from web search results
-  - [ ] Save insights across sessions
+  - [x] Use persistent ChromaDB for long-term memory (`chromadb_memory/`)
+  - [x] Agent "learns" from web search results (`save_memory` tool)
+  - [x] Save insights across sessions (`search_memory` recalls them in a fresh agent)
 
 - [ ] **Structured Output**
   - [ ] Return answers as JSON + natural language
@@ -233,8 +233,8 @@ project/starter/
 │   ├── documents.py                       # Document types
 │   ├── parsers.py                         # Output parsers
 │   └── loaders.py                         # Data loaders
-├── Udaplay_01_starter_project.ipynb       # Part 1: Vector DB (TO DO)
-└── Udaplay_02_starter_project.ipynb       # Part 2: Agent (TO DO)
+├── Udaplay_01_starter_project.ipynb       # Part 1: Vector DB (done)
+└── Udaplay_02_starter_project.ipynb       # Part 2: Agent (done)
 ```
 
 ---
@@ -283,5 +283,5 @@ TAVILY_API_KEY="tvly-..."
 
 ---
 
-**Last Updated:** 2026-10-02  
+**Last Updated:** 2026-10-06  
 **Maintenance:** Update this file as implementation progresses
