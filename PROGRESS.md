@@ -189,12 +189,12 @@ Available in `project/starter/lib/`:
   - [ ] Add more games to `games/` folder
   - [ ] Show richer queries with custom data
 
-- [ ] **Advanced Memory**
+- [x] **Advanced Memory**
   - [x] Use persistent ChromaDB for long-term memory (`chromadb_memory/`)
   - [x] Agent "learns" from web search results (`save_memory` tool)
   - [x] Save insights across sessions (`search_memory` recalls them in a fresh agent)
 
-- [ ] **Structured Output**
+- [x] **Structured Output**
   - [x] Return answers as JSON + natural language (`ask_structured`)
   - [x] Include metadata: confidence, sources, reasoning steps
 

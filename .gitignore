@@ -1,5 +1,4 @@
 project/starter/.env
-chromadb/
 chromadb_memory/
 __pycache__/
 .venv/
