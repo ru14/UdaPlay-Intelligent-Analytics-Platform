@@ -8,9 +8,9 @@ UdaPlay is an AI-powered research agent for the video game industry. It combines
 This repository is organized around the Udacity *Building Agents* coursework and includes both the project materials and the implementation workspace:
 
 - `project/` — the main UdaPlay project materials and starter code
-- `module_01_Extending_Agents_with_Tools/` through `module_10_Evaluating_Agents/` — course notebooks and supporting exercises
 - `README.md` — this guide
-- `LICENSE` / `LICENSE.md` — licensing information
+- `PROGRESS.md` — implementation checklist
+- `LICENSE` — licensing information
 
 ## Project summary
 
@@ -83,4 +83,4 @@ After implementation, test the agent with questions such as:
 
 ## License
 
-This project is distributed under the MIT License. See [`LICENSE.md`](LICENSE.md).
+This project is distributed under the MIT License. See [`LICENSE`](LICENSE).

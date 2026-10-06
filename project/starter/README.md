@@ -38,7 +38,7 @@ Required Tools to Implement:
 ## Requirements
 
 ### Environment Setup
-Create a `.env` file in `project/starter` (copy `.env.example` from the repo root) with:
+Create a `.env` file in `project/starter` with:
 ```
 OPENAI_API_KEY="voc-..."          # the voc- key from the classroom's Cloud Resources panel
 OPENAI_BASE_URL="https://openai.vocareum.com/v1"
