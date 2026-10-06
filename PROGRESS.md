@@ -185,9 +185,9 @@ Available in `project/starter/lib/`:
 
 ## 🌟 Stand-Out Features (Optional)
 
-- [ ] **Personalize Dataset**
-  - [ ] Add more games to `games/` folder
-  - [ ] Show richer queries with custom data
+- [x] **Personalize Dataset**
+  - [x] Add more games to `games/` folder
+  - [x] Show richer queries with custom data
 
 - [x] **Advanced Memory**
   - [x] Use persistent ChromaDB for long-term memory (`chromadb_memory/`)
